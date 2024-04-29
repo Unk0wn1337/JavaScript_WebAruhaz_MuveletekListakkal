@@ -21,4 +21,25 @@ export const ADATOK_LISTA =
         kep: "kepek/kutya3.jpg",
         ar: 6000
     },
+    {
+        kutyaNeve: "Doge",
+        kora: 8,
+        neme: "férfi",
+        kep: "kepek/kutya4.jpg",
+        ar: 100000000
+    },
+    {
+        kutyaNeve: "Ralph",
+        kora: 3,
+        neme: "nő",
+        kep: "kepek/kutya5.jpg",
+        ar: 8999
+    },
+    {
+        kutyaNeve: "Jocky",
+        kora: 11,
+        neme: "férfi",
+        kep: "kepek/kutya6.jpg",
+        ar: 7390
+    }
 ]

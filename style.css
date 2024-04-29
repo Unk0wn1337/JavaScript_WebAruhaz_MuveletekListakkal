@@ -1,3 +1,10 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: auto;
+}
+
 ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -5,8 +12,10 @@ ul {
 
 .kartyak {
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns:  1fr 1fr 1fr;
+    
 }
+
 
 .kutyaKepek {
    width: 25%;

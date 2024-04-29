@@ -6,10 +6,10 @@ export function divTermekOsszealit(lista){
                     txt += `<img class="kutyaKepek" src="${element.kep}" alt="kutya${i}">`;
                     //<img src="" alt="">
                     txt += `<h4>${element.kutyaNeve}</h4>`;
-                    txt += `<p>${element.kora}</p>`;
-                    txt += `<p>${element.neme}</p>`;
-                    txt += `<p>${element.ar}</p>`;
-                    txt += `<button id="${i}">Kosarba</button>`              
+                    txt += `<p>${element.kora} eves </p>`;
+                    txt += `<p>neme: ${element.neme}</p>`;
+                    txt += `<p>${element.ar} Ft</p>`;
+                    txt += `<button id="termek${i}">Kosarba</button>`              
                 txt += `</div>`;
         txt += `</div>`;
     });
