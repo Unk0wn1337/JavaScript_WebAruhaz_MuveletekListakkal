@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Kende webáruház</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="init.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Kutya  shop</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Termékeink</a></li>
+                <li><a href="kosar.html">Kosár</a></li>
+                <li><a href="szemelyesadatok.html">Személyes adatok</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+        <article>
+            <form>
+                <div class="szemelyesAdatokKezelese">
+
+                    <div class="kartyaAdat">
+                        <label for="cardholder">Kártyatulajdonos neve:</label>
+                        <input type="text" id="cardholder" name="cardholder" required>
+                    </div>
+                    <div class="kartyaAdat">
+                        <label for="cardnumber">Kártyaszám:</label>
+                        <input type="text" id="cardnumber" name="cardnumber" required>
+                    </div>
+                    <div class="kartyaAdat">
+                    <label for="expiry">Lejárati dátum:</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="HH/ÉÉ" required>
+                </div>
+                <div class="kartyaAdat">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+            </div>
+                <button type="submit">Fizetés</button>
+            </form>
+        </article>
+    </main>
+</body>
+</html>

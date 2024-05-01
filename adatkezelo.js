@@ -15,3 +15,12 @@ export function arSzerintCsokkenoNovekvo(lista,irany) {
     
     return lista;
 }
+
+export function kattintasKosarba(lista,index,termekLista){
+    termekLista.push(lista[index]);
+
+}
+export function kosarbaLevoElemTorles(lista,termekIndex){
+    lista.splice(index,1);
+    return lista;
+}

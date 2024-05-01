@@ -2,21 +2,121 @@
     box-sizing: border-box;
 }
 body {
+    background-color: #206B68;
+    max-width: 1300px;
     margin: auto;
 }
+main {
+    border: solid 10px #0D5552;
+}
+header {
+    border-bottom: solid 10px #0D5552;
+}
+nav {
+    border-bottom: solid 10px #0D5552;
+}
+.szurok{
+    display:  grid;
+    grid-template-columns: 1fr 1fr;
+}
 
-ul {
+nav ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+nav ul li {
+    list-style-type: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+nav ul li a:hover {
+    text-decoration: none;
+    color: red;
+
+}
+
+.form-label{
+    color: white;
+}
+
 
 .kartyak {
     display: grid;
     grid-template-columns:  1fr 1fr 1fr;
-    
+    margin-top: 20px;
 }
 
+.card{
+    margin: auto;
+    text-align: center;
+  
+}
+.card h4, p {
+    color: white;
+}
+
+
+header h1 {
+    text-align: center;
+    color: white;
+}
 
 .kutyaKepek {
    width: 25%;
 }
+
+/*ADMIN  FELULET*/
+.adminTablazat  table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adminTablazat table, th, td{
+    border: solid 1px black;
+    color: white;
+} 
+
+.szemelyesAdatokKezelese{
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 800px) {
+    nav ul  {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .kartyak {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        margin-top: 20px;
+    }
+    .adminTablazat table{
+        overflow-x:auto;
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    .szurok {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul  {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .kartyak {
+        display: grid;
+        grid-template-columns:  1fr;
+        margin-top: 20px;
+    }
+    .szemelyesAdatokKezelese{
+        grid-template-columns: 1fr;
+    }
+
+  }

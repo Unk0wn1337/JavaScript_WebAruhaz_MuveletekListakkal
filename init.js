@@ -1,6 +1,6 @@
 import { ADATOK_LISTA } from "./listakezelo.js";
-import { divTermekOsszealit, megjelenites  } from "./fuggvenyek.js";
-import { arSzerintCsokkenoNovekvo, szuresNevSzerint } from "./adatkezelo.js";
+import { adminMegjelenites, adminTermekOsszealit, divTermekOsszealit, megjelenites  } from "./fuggvenyek.js";
+import { arSzerintCsokkenoNovekvo, kattintasKosarba, kosarbaLevoElemTorles, szuresNevSzerint } from "./adatkezelo.js";
 
 
 let nevIrany = 1;
@@ -9,8 +9,11 @@ init(ADATOK_LISTA);
 export function init(lista){
     let txt = divTermekOsszealit(lista);
     megjelenites(txt);
+    let adminAdatok = adminTermekOsszealit(lista);
+    adminMegjelenites(adminAdatok);
     arRendezEsemeny(lista);
-   
+    kosarbaLevoElemTorlesEsemeny();
+    kosarbaHozzadEsemeny();
     
 }
 function szuresNevTermekSzerintEsemeny(){
@@ -32,6 +35,33 @@ function arRendezEsemeny(lista){
     })
 }
 
+const KOSARBA_HOZZADOTT_ELEM = [];
+
+
+// HA ELTUDJUK TAROLNI STATIKUSAN A KOSARBA LEVO ELEMEKET
+function kosarbaLevoElemTorlesEsemeny(){
+    const KUKA_ELEM = $(".kuka");
+    KUKA_ELEM.on("click",function(){
+        let index =  event.target.id;
+        const lista = kosarbaLevoElemTorles(KOSARBA_HOZZADOTT_ELEM,index);
+        init(lista);
+    });
+}
+
+
+function kosarbaHozzadEsemeny(){
+    const KOSAR_GOMB = $(".kosar");
+    KOSAR_GOMB.on("click",function(){
+        let index = event.target.id;
+        kattintasKosarba(ADATOK_LISTA,index,KOSARBA_HOZZADOTT_ELEM);
+        console.log(index);
+        console.log(KOSARBA_HOZZADOTT_ELEM);
+        alert("Termék hozzáadva a kosárhoz!")
+    });
+}
+
+
 
 szuresNevTermekSzerintEsemeny();
+
 
