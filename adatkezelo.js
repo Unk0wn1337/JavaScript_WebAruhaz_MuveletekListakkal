@@ -20,7 +20,7 @@ export function kattintasKosarba(lista,index,termekLista){
     termekLista.push(lista[index]);
 
 }
-export function kosarbaLevoElemTorles(lista,termekIndex){
+export function kosarbaLevoElemTorles(lista,index){
     lista.splice(index,1);
     return lista;
 }

@@ -1,19 +1,21 @@
 import { ADATOK_LISTA } from "./listakezelo.js";
 import { adminMegjelenites, adminTermekOsszealit, divTermekOsszealit, megjelenites  } from "./fuggvenyek.js";
 import { arSzerintCsokkenoNovekvo, kattintasKosarba, kosarbaLevoElemTorles, szuresNevSzerint } from "./adatkezelo.js";
+import { szamlazas } from "./urlapkezelo.js";
 
 
 let nevIrany = 1;
 init(ADATOK_LISTA);
+arRendezEsemeny(ADATOK_LISTA);
 
 export function init(lista){
     let txt = divTermekOsszealit(lista);
     megjelenites(txt);
     let adminAdatok = adminTermekOsszealit(lista);
     adminMegjelenites(adminAdatok);
-    arRendezEsemeny(lista);
     kosarbaLevoElemTorlesEsemeny();
     kosarbaHozzadEsemeny();
+    adminElemTorles();
     
 }
 function szuresNevTermekSzerintEsemeny(){
@@ -31,6 +33,7 @@ function arRendezEsemeny(lista){
         const LISTA = arSzerintCsokkenoNovekvo(lista,nevIrany);
         console.log(LISTA);
         nevIrany*=(-1);
+        console.log(nevIrany);
         init(LISTA);
     })
 }
@@ -48,6 +51,17 @@ function kosarbaLevoElemTorlesEsemeny(){
     });
 }
 
+function adminElemTorles(){
+    const TORLES = $(".torles");
+    TORLES.on("click",function(){
+        let index =  event.target.id;
+        const lista = kosarbaLevoElemTorles(ADATOK_LISTA,index);
+        init(lista);
+    });
+}
+
+
+
 
 function kosarbaHozzadEsemeny(){
     const KOSAR_GOMB = $(".kosar");
@@ -60,6 +74,19 @@ function kosarbaHozzadEsemeny(){
     });
 }
 
+
+szamlazasEsemeny();
+
+const SZAMLAZASI_ADATOK = [];
+
+function szamlazasEsemeny(){
+    const MEGEROSIT = $("#megerosites");
+    MEGEROSIT.on("click",function(){
+        event.preventDefault;
+        let szamla = szamlazas(SZAMLAZASI_ADATOK);
+        console.log(szamla);
+    });
+}
 
 
 szuresNevTermekSzerintEsemeny();
