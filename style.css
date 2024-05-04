@@ -49,6 +49,25 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
+/*IDEIGLENES KOSAR AMIG NINCSEN ASZINKRON*/
+.kosarhozHozzadottTermekekCim{
+    overflow-x:auto;
+    color: white;
+    text-align: center;
+}
+.kosarhozHozzadottTermekek  table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kosarhozHozzadottTermekek table, th, td{
+    border: solid 1px black;
+    color: white;
+} 
+
+
+
+
 .card{
     margin: auto;
     text-align: center;

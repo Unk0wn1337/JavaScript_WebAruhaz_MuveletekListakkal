@@ -1,5 +1,5 @@
 import { ADATOK_LISTA } from "./listakezelo.js";
-import { adminMegjelenites, adminTermekOsszealit, divTermekOsszealit, megjelenites  } from "./fuggvenyek.js";
+import { adminMegjelenites, adminTermekOsszealit, divTermekOsszealit, kosarbaTermekekMegjelenites, megjelenites  } from "./fuggvenyek.js";
 import { arSzerintCsokkenoNovekvo, kattintasKosarba, kosarbaLevoElemTorles, szuresNevSzerint } from "./adatkezelo.js";
 import { szamlazas } from "./urlapkezelo.js";
 
@@ -71,6 +71,8 @@ function kosarbaHozzadEsemeny(){
         console.log(index);
         console.log(KOSARBA_HOZZADOTT_ELEM);
         alert("Termék hozzáadva a kosárhoz!")
+        let ideiglenesKosar = adminTermekOsszealit(KOSARBA_HOZZADOTT_ELEM)
+        kosarbaTermekekMegjelenites(ideiglenesKosar);
     });
 }
 

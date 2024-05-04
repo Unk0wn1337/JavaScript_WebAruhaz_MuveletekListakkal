@@ -47,3 +47,8 @@ export function adminMegjelenites(txt){
   const ADMIN_ADATOK = $(".adminTablazat");
   ADMIN_ADATOK.html(txt)
 }
+
+export function kosarbaTermekekMegjelenites(txt){
+  const IDEIGLENES_KOSAR_DIV = $(".kosarhozHozzadottTermekek");
+  IDEIGLENES_KOSAR_DIV.html(txt)
+}
