@@ -1,12 +1,13 @@
 import { ADATOK_LISTA } from "./listakezelo.js";
 import { adminMegjelenites, adminTermekOsszealit, divTermekOsszealit, kosarbaTermekekMegjelenites, megjelenites  } from "./fuggvenyek.js";
-import { arSzerintCsokkenoNovekvo, kattintasKosarba, kosarbaLevoElemTorles, szuresNevSzerint } from "./adatkezelo.js";
+import { abcSzerintCsokkenoNovekvo, arSzerintCsokkenoNovekvo, kattintasKosarba, kosarbaLevoElemTorles, szuresNevSzerint } from "./adatkezelo.js";
 import { szamlazas } from "./urlapkezelo.js";
 
 
 let nevIrany = 1;
 init(ADATOK_LISTA);
 arRendezEsemeny(ADATOK_LISTA);
+abcRendezEsemeny(ADATOK_LISTA);
 
 export function init(lista){
     let txt = divTermekOsszealit(lista);
@@ -26,7 +27,8 @@ function szuresNevTermekSzerintEsemeny(){
         init(LISTA);
     });
 }
-// NEM TELJESEN JO
+
+
 function arRendezEsemeny(lista){
     const AR_SZERINT_RENDEZ = $("#arSzerintRendez");
     AR_SZERINT_RENDEZ.on("click",function(){
@@ -37,6 +39,18 @@ function arRendezEsemeny(lista){
         init(LISTA);
     })
 }
+
+function abcRendezEsemeny(lista){
+    const ABC_SZERINT_RENDEZ = $("#abcSzerintRendez");
+    ABC_SZERINT_RENDEZ.on("click", function(){
+        const LISTA = abcSzerintCsokkenoNovekvo(lista,nevIrany);
+        nevIrany*=(-1);
+        init(LISTA);
+    })
+}
+
+
+
 
 const KOSARBA_HOZZADOTT_ELEM = [];
 
@@ -62,7 +76,6 @@ function adminElemTorles(){
 
 
 
-
 function kosarbaHozzadEsemeny(){
     const KOSAR_GOMB = $(".kosar");
     KOSAR_GOMB.on("click",function(){
@@ -70,9 +83,15 @@ function kosarbaHozzadEsemeny(){
         kattintasKosarba(ADATOK_LISTA,index,KOSARBA_HOZZADOTT_ELEM);
         console.log(index);
         console.log(KOSARBA_HOZZADOTT_ELEM);
+        let kosarbaHozzadadottElemToJSON = JSON.stringify(KOSARBA_HOZZADOTT_ELEM);
+        localStorage.setItem("kosarbaKutyak",kosarbaHozzadadottElemToJSON);
+        // localStorage.setItem("nev", ADATOK_LISTA[index].kutyaNeve);
+        // localStorage.setItem("kora", ADATOK_LISTA[index].kora);
+        // localStorage.setItem("ara", ADATOK_LISTA[index].ar);
         alert("Termék hozzáadva a kosárhoz!")
         let ideiglenesKosar = adminTermekOsszealit(KOSARBA_HOZZADOTT_ELEM)
         kosarbaTermekekMegjelenites(ideiglenesKosar);
+        
     });
 }
 
