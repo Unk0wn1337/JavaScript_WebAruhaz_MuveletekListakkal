@@ -22,11 +22,11 @@ export function init(lista){
     adminMegjelenites(adminAdatok);
     kosarbaHozzadEsemeny();
     kosarHozzadDbSzamMegjelenites();
-    kosarbaHozzaadottElemek();
     kosarbaLevoElemTorlesEsemeny();
     adminElemTorles();
 }
 
+kosarbaHozzaadottElemek();
 
 
 function szuresNevTermekSzerintEsemeny(){
