@@ -47,9 +47,15 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns:  1fr 1fr 1fr;
     margin-top: 20px;
+    border-top: solid 10px #0D5552;
+    border-bottom: solid 10px #0D5552;
 }
 
-/*IDEIGLENES KOSAR AMIG NINCSEN ASZINKRON*/
+.kosarhozHozzadottTermekekDarabSzam{
+  text-align: center;
+  color: white;
+  font-size: 20px; 
+}
 .kosarhozHozzadottTermekekCim{
     overflow-x:auto;
     color: white;
@@ -66,12 +72,10 @@ nav ul li a:hover {
 } 
 
 
-
-
 .card{
     margin: auto;
     text-align: center;
-  
+    padding: 20px;
 }
 .card h4, p {
     color: white;
@@ -88,6 +92,12 @@ header h1 {
 }
 
 /*ADMIN  FELULET*/
+
+.adminTablazat {
+    margin-top: 20px;
+    border-top: solid 10px #0D5552;
+}
+
 .adminTablazat  table {
     margin-left: auto;
     margin-right: auto;
@@ -97,6 +107,27 @@ header h1 {
     border: solid 1px black;
     color: white;
 } 
+
+/*KOSAR FELULET*/
+.kosarArticleTable  table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kosarArticleTable table, th, td{
+    border: solid 1px black;
+    color: white;
+} 
+
+.kosarArticleTable {
+    border-bottom: solid 10px #0D5552;
+}
+
+.kosarVegOsszeg {
+    text-align: center;
+    font-size: 20px;
+}
+
 
 .szemelyesAdatokKezelese{
     color: white;
@@ -115,6 +146,9 @@ header h1 {
         margin-top: 20px;
     }
     .adminTablazat table{
+        overflow-x:auto;
+    }
+    .kosarArticleTable table{
         overflow-x:auto;
     }
 

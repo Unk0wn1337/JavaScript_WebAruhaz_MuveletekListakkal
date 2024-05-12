@@ -3,7 +3,6 @@ export function divTermekOsszealit(lista){
     lista.forEach((element,i) => {
             txt += `<div class="card">`;
                     txt += `<img class="kutyaKepek" src="${element.kep}" alt="kutya${i}">`;
-                    //<img src="" alt="">
                     txt += `<h4>${element.kutyaNeve}</h4>`;
                     txt += `<p>${element.kora} eves </p>`;
                     txt += `<p>neme: ${element.neme}</p>`;
@@ -20,7 +19,6 @@ export function  megjelenites(txt){
   KARTYAK_DIV.html(txt);
 }
 
-/*KODDUPLIKALAS! ADMIN RESZNEL */
 
 export function adminTermekOsszealit(lista){
     let txt = `<table>`;
@@ -49,6 +47,15 @@ export function adminMegjelenites(txt){
 }
 
 export function kosarbaTermekekMegjelenites(txt){
-  const IDEIGLENES_KOSAR_DIV = $(".kosarhozHozzadottTermekek");
-  IDEIGLENES_KOSAR_DIV.html(txt)
+  const KOSAR_ARTICLE_TABLE = $(".kosarArticleTable");
+  KOSAR_ARTICLE_TABLE.html(txt)
+}
+export function kosarbaTermekekDarabSzamMegjelenites(txt){
+  const KOSAR_DIV_TERMEK_DB = $(".kosarhozHozzadottTermekekDarabSzam");
+  KOSAR_DIV_TERMEK_DB.html(txt)
+}
+
+export function kosarbaVegosszegMegjelenites(txt){
+  const VEGOSSZEG_DIV = $(".kosarVegOsszeg");
+  VEGOSSZEG_DIV.html(txt);
 }

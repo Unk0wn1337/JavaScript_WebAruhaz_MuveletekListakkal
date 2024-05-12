@@ -1,13 +1,13 @@
-export function szamlazas(SZAMLAZASI_ADATOK){
+export function szamlazas(){
     let kartyaTulajdonos = $("#cardholder");
     let kartyaSzam = $("#cardnumber");
     let lejaratiDatum = $("#expiry");
     let cvv = $("#cvv");
-    adat= {
+    let adat= {
             kartyaTulajdonosok :kartyaTulajdonos.val(),
             kartyaSzamok : kartyaSzam.val(),
             lejaratiDatumok :lejaratiDatum.val(),
             cvvk: cvv.val()
         }  
-    SZAMLAZASI_ADATOK.push(adat);
+    return adat;
 }
