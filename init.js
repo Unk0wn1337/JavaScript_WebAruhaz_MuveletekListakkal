@@ -21,12 +21,12 @@ export function init(lista){
     let adminAdatok = adminTermekOsszealit(lista);
     adminMegjelenites(adminAdatok);
     kosarbaHozzadEsemeny();
+    kosarbaHozzaadottElemek();
     kosarHozzadDbSzamMegjelenites();
     kosarbaLevoElemTorlesEsemeny();
     adminElemTorles();
 }
 
-kosarbaHozzaadottElemek();
 
 
 function szuresNevTermekSzerintEsemeny(){
@@ -130,10 +130,11 @@ function kosarbaLevoElemTorlesEsemeny(){
 function kosarErtekMegjelenites(){
     let kosarbaMarHozzaadottElemLocalStorage = JSON.parse(localStorage.getItem("kosarbaKutyak"));
     let osszeg = 0;
-    console.log(kosarbaMarHozzaadottElemLocalStorage);
-    kosarbaMarHozzaadottElemLocalStorage.forEach(element => {
-        osszeg += element.ar;
-    });
+    if(kosarbaMarHozzaadottElemLocalStorage){
+        kosarbaMarHozzaadottElemLocalStorage.forEach(element => {
+            osszeg += element.ar;
+        });
+    }
 
     let txt = `<p>💸${osszeg} Ft</p>`;
     kosarbaVegosszegMegjelenites(txt);
