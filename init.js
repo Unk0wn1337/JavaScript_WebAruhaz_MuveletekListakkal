@@ -13,7 +13,7 @@ szamlazasEsemeny();
 
 szuresNevTermekSzerintEsemeny();
 
-
+const KOSARBA_HOZZADOTT_ELEM = [];
 
 export function init(lista){
     let txt = divTermekOsszealit(lista);
@@ -60,7 +60,7 @@ function abcRendezEsemeny(lista){
 }
 
 
-const KOSARBA_HOZZADOTT_ELEM = [];
+
 
 
 function adminElemTorles(){
@@ -98,9 +98,15 @@ function kosarbaHozzadEsemeny(){
 
 function kosarHozzadDbSzamMegjelenites(){
     let kosarbaHozzaAdottElemJSON = JSON.parse(localStorage.getItem("kosarbaKutyak"));
-    let db = kosarbaHozzaAdottElemJSON.length;
-    let txt = `<p>🛒 ${db} db</p>`;
-    kosarbaTermekekDarabSzamMegjelenites(txt);
+    if (kosarbaHozzaAdottElemJSON) {
+        let db = kosarbaHozzaAdottElemJSON.length;
+        let txt = `<p>🛒 ${db} db</p>`;
+        kosarbaTermekekDarabSzamMegjelenites(txt);
+    } else {
+        let txt = `<p>🛒 0 db</p>`;
+        kosarbaTermekekDarabSzamMegjelenites(txt);
+    }
+    
 }
 
 function kosarbaHozzaadottElemek(){
